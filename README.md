@@ -6,13 +6,19 @@ prisma6 と sqlite を使用しています。
 This is a Next.js project
 bootstrapped with create-next-app
 
+## プロジェクト構成
+
+記事 登録・編集・削除
+ユーザー ログイン 登録
+
 ## 技術スタック
 
 - **Framework:** Next.js 16 (App Router)
 - **Database:** SQLite
 - **ORM:** Prisma 6
+- **UIライブラリ:** shadcn/ui
 
-## Getting Started
+## 開発環境構築 Getting Started
 
 ### 依存関係インストール
 
@@ -52,6 +58,14 @@ run the development server:
 
 ```bash
 npm run dev
+```
+
+### Prisma Studio起動
+
+start Prisma Studio:
+
+```
+npx prisma studio
 ```
 
 Open localhost:3000 with your browser to see the result.
