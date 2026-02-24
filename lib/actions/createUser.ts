@@ -1,5 +1,4 @@
 'use server';
-
 import { prisma } from '@/lib/prisma';
 import { registerSchema } from '@/validations/user';
 import bcryptjs from 'bcryptjs';

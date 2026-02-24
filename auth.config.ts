@@ -21,6 +21,17 @@ export const authConfig = {
       }
       return true;
     },
+    /**
+     * セッションを拡張し、ユーザーidをセッションに追加 / Add user id to session
+     */
+    async session({ session, token }) {
+      if (session?.user) {
+        session.user.id = (token.id || token.sub || '') as string;
+        session.user.name = token.name as string;
+        session.user.email = token.email as string;
+      }
+      return session;
+    },
   },
   providers: [], // Add providers with an empty array for now
 } satisfies NextAuthConfig;
