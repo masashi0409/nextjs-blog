@@ -1,9 +1,10 @@
-import { getPost } from '@/lib/post';
+import { getOwnPost } from '@/lib/ownPost';
 import { notFound } from 'next/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { ja } from 'date-fns/locale';
 import { formatDistanceToNow } from 'date-fns';
+import { auth } from '@/auth';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
@@ -13,9 +14,17 @@ type Params = {
   params: Promise<{ id: string }>;
 };
 
-export default async function PostPage({ params }: Params) {
+export default async function ShowPage({ params }: Params) {
+  // sessionからユーザーidを取得 / Get user id from session
+  const session = await auth();
+  const userId = session?.user?.id;
+  if (!session?.user?.email || !userId) {
+    throw new Error('不正なリクエストです');
+  }
+  // 記事IDを取得
   const { id } = await params;
-  const post = await getPost(id);
+  // 特定の記事を取得
+  const post = await getOwnPost(userId, id);
 
   if (!post) {
     notFound();

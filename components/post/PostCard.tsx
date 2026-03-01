@@ -10,7 +10,7 @@ export default function PostCard({ post }: PostCardProps) {
     <Card className='hover:shadow-lg transition-shadow'>
       <Link href={`/posts/${post.id}`}>
         {post.topImage && (
-          <div className='relative w-full h-48'>
+          <div className='relative w-full h-75'>
             <Image
               src={post.topImage}
               alt={post.title}
