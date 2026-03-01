@@ -26,10 +26,10 @@ export default function PublicHeader() {
         <div className='flex items-center gap-4'>
           <SearchBox />
           <Button variant='outline' asChild>
-            <Link href='/login'>login</Link>
+            <Link href='/login'>ログイン</Link>
           </Button>
           <Button variant='default' asChild>
-            <Link href='/register'>register</Link>
+            <Link href='/register'>新規登録</Link>
           </Button>
         </div>
       </div>

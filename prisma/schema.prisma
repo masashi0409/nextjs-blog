@@ -9,8 +9,10 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider  = "postgresql"
   url      = env("DATABASE_URL")
+  // SupabaseでConnection Poolingを使う
+  directUrl = env("DIRECT_URL")
 }
 
 model User {

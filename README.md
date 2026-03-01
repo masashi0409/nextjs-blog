@@ -1,22 +1,28 @@
 ## Next.js Blog
 
-Next.jsで開発したブログアプリ  
-prisma6 と sqlite を使用しています。
-
-This is a Next.js project
+Next.jsで開発した簡易ブログアプリ  
+This is a Next.js simple blog project
 bootstrapped with create-next-app
 
 ## プロジェクト構成
 
-記事 登録・編集・削除
-ユーザー ログイン 登録
+認証なし画面: 記事一覧・詳細
+認証あり画面：一覧（検索）・登録・編集・削除
+認証機能： ログイン・ユーザ登録
+
+Auth.js認証
+画像アップロード
+Markdown対応
+
+supabase(postgresql)接続
 
 ## 技術スタック
 
 - **Framework:** Next.js 16 (App Router)
-- **Database:** SQLite
+- **Database:** PostgreSQL(Supabase)
 - **ORM:** Prisma 6
 - **UIライブラリ:** shadcn/ui
+- **認証:** Auth.js
 
 ## 開発環境構築 Getting Started
 
